@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZOMBIE MATRIX | MOTD</title>
+  <title>ZOMBIE MATRIX | About zhplugin</title>
   <style>
     :root {
       --green: #7bff93;
@@ -91,6 +91,14 @@
       text-shadow: 0 0 14px rgba(88, 255, 146, 0.44);
     }
 
+    h2 {
+      margin: 0 0 6px 0;
+      font-size: clamp(13px, 2.2vw, 17px);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #7bff93;
+    }
+
     .sub {
       margin-top: 8px;
       color: #8ef0ac;
@@ -114,6 +122,13 @@
 
     li {
       margin: 4px 0;
+    }
+
+    p {
+      margin: 6px 0;
+      font-size: clamp(12px, 2vw, 14px);
+      color: #d6ffe0;
+      line-height: 1.6;
     }
 
     .footer {
@@ -142,42 +157,62 @@
   <div class="noise"></div>
 
   <div class="content">
-    <div class="sub">Welcome to the</div>
-    <h1>ZOMBIEHORDE MATRIX</h1>
-    <div class="sub" style="text-align: right;">Survive the Horde</div>
+    <div class="sub">About</div>
+    <h1>zombiehorde.com</h1>
+    <h1>zhplugin</h1>
+    <div class="sub" style="text-align: right;">Version 1.1</div>
     <div class="rule"></div>
 
-    <ul>
-      <li>Zombies are fast and tough — teamwork is a must.</li>
-      <li>Headshots are crucial — use Focus Fire.</li>
-      <li>Respect & Fairplay: no griefing, no harassment, no intentional team blocking.</li>
-      <li>[G]ood [L]uck & [H]ave [F]un</li>
+    <h2>What is Zombie Horde?</h2>
+    <p>
+      Zombie Horde is a server plugin for Counter-Strike: Source that turns a standard
+      CS:S server into a cooperative survival shooter. A team of humans must work together
+      to survive a horde of zombies &mdash; only headshots count.
+      Developed 2005&ndash;2007 by <strong style="color:#7bff93;">.robot &amp; electronaut</strong>
+      (Australian open-source project).
+    </p>
+
     <div class="rule"></div>
-    <div class="sub">Chat commands:</div>
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr style="height: 50px;">
-        <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>rpg</strong> ➔ to open the RPG menu.</li>
-          <li><strong>rpgrank</strong> ➔ to see your RPG rank.</li>
-          <li><strong>!rank</strong> ➔ to see your rank</li>
-          <li><strong>!top</strong> ➔ to see the Top 10 players.</li>
-        </td>
-        <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>!sounds</strong> ➔ to open the sounds menu.</li>
-          <li><strong>!skins</strong> ➔ to select your CT skin.</li>
-          <li><strong>!nextmap</strong> ➔ to see the next map.</li>
-          <li><strong>!rtv</strong> ➔ to vote for the next map.</li>
-        </td>
-      </tr>
-    </table>
+
+    <h2>Gameplay</h2>
+    <ul>
+      <li>32-player server recommended &mdash; 18 bots play as zombies</li>
+      <li>Zombies receive a health boost and self-healing on spawn</li>
+      <li>Only direct headshots permanently kill a zombie</li>
+      <li>Various zombie classes with different abilities</li>
+      <li>Zombies drop green eggs &mdash; powerups for humans (watch out: poison!)</li>
     </ul>
 
     <div class="rule"></div>
 
+    <h2>Powerups (13 Types)</h2>
+    <ul>
+      <li>Berserk &bull; Speed &bull; Infinite Ammo &bull; Low Gravity &bull; Slow Motion</li>
+      <li>Health Regen &bull; Assault Suit &bull; Teleport &bull; Full Health &bull; Full Ammo</li>
+      <li>Quad Damage &bull; Zombification &bull; Ratsack <em>(poison!)</em></li>
+    </ul>
+
+    <div class="rule"></div>
+
+    <h2>Admin Commands (Selection)</h2>
+    <ul>
+      <li><strong>zh_ac</strong> &mdash; open anti-camp menu</li>
+      <li><strong>zh_restrict / zh_unrestrict</strong> &mdash; restrict / unrestrict weapons</li>
+      <li><strong>zh_resetrank / zh_resetallranks</strong> &mdash; reset player rank(s)</li>
+      <li><strong>zh_powerup</strong> &mdash; manually spawn a powerup</li>
+      <li><strong>zh_incslot / zh_decslot</strong> &mdash; adjust zombie slot count</li>
+    </ul>
+
     <div class="footer">
-      <a href="about-zhplugin.html" style="text-decoration:none;"><span class="tag">About zombiehorde.com aka zhplugin</span></a>
-      <a href="about-zhmatrix.html" style="text-decoration:none;"><span class="tag">About zombiehorde matrix</span></a>
+      <span>&copy; 2005&ndash;2007 .robot &amp; electronaut</span>
+      <span>Open Source &mdash; zombiehorde.com</span>
     </div>
+
+    <div class="rule"></div>
+
+    <div class="footer">
+      <a href="motd.html" style="text-decoration:none;"><span class="tag">Home</span></a>
+      <a href="about-zhmatrix.html" style="text-decoration:none;"><span class="tag">About zombiehorde matrix</span></a>
   </div>
 </body>
 </html>
