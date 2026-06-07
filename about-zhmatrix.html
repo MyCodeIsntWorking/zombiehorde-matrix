@@ -16,7 +16,10 @@
       box-sizing: border-box;
     }
 
-    html,
+    html {
+      height: 100%;
+    }
+
     body {
       width: 100%;
       min-height: 100%;
@@ -27,12 +30,11 @@
       overflow-y: auto;
     }
 
-    body {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 100px 0;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
       background-image:
         radial-gradient(circle at 20% 10%, rgba(48, 150, 85, 0.25), transparent 36%),
         radial-gradient(circle at 80% 85%, rgba(40, 130, 80, 0.22), transparent 42%),
@@ -41,7 +43,14 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 0;
     }
 
     .noise {
