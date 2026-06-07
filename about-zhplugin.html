@@ -27,7 +27,7 @@
       font-family: Tahoma, Verdana, Arial, sans-serif;
       color: #d4ffdd;
       background: #000;
-      overflow-y: auto;
+      overflow-y: scroll;
     }
 
     body::before {
@@ -226,4 +226,10 @@
       <a href="about-zhmatrix.html" style="text-decoration:none;"><span class="tag">About zombiehorde matrix</span></a>
   </div>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
+</script>
 </html>
