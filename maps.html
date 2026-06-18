@@ -48,8 +48,9 @@
     body {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      padding: 100px 0;
     }
 
     .noise {
@@ -147,6 +148,53 @@
       letter-spacing: 1px;
       font-weight: bold;
     }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 4px 0;
+    }
+
+    .map-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(5, 18, 10, 0.6);
+      border: 1px solid rgba(100, 255, 150, 0.22);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .map-card:hover {
+      border-color: rgba(123, 255, 147, 0.65);
+      box-shadow: 0 0 12px rgba(80, 255, 130, 0.18);
+    }
+
+    .map-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.88) saturate(0.9);
+      transition: filter 0.2s;
+    }
+
+    .map-card:hover img {
+      filter: brightness(1) saturate(1.05);
+    }
+
+    .map-card .map-name {
+      width: 100%;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #9dffc0;
+      letter-spacing: 0.8px;
+      text-align: center;
+      word-break: break-all;
+      background: rgba(0, 12, 5, 0.5);
+    }
   </style>
 </head>
 <body>
@@ -157,31 +205,31 @@
     <h1>ZOMBIEHORDE MATRIX</h1>
     <div class="sub" style="text-align: right;">Survive the Horde</div>
     <div class="rule"></div>
-
-    <ul>
-      <li>Zombies are fast and tough — teamwork is a must.</li>
-      <li>Headshots are crucial — use Focus Fire.</li>
-      <li>Respect & Fairplay: no griefing, no harassment, no intentional team blocking.</li>
-      <li>[G]ood [L]uck & [H]ave [F]un</li>
+    <h2 style="text-align: center;">Maps on this server</h2>
     <div class="rule"></div>
-    <div class="sub">Chat commands:</div>
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr style="height: 50px;">
-        <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>rpg</strong> ➔ to open the RPG menu.</li>
-          <li><strong>rpgrank</strong> ➔ to see your RPG rank.</li>
-          <li><strong>!rank</strong> ➔ to see your rank</li>
-          <li><strong>!top</strong> ➔ to see the Top 10 players.</li>
-        </td>
-        <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>!sounds</strong> ➔ to open the sounds menu.</li>
-          <li><strong>!skins</strong> ➔ to select your CT skin.</li>
-          <li><strong>!nextmap</strong> ➔ to see the next map.</li>
-          <li><strong>!rtv</strong> ➔ to vote for the next map.</li>
-        </td>
-      </tr>
-    </table>
-    </ul>
+
+    <div class="map-grid">
+      <div class="map-card"><img src="images/maps/cs_assault2100.jpg" alt="cs_assault2100"><div class="map-name">cs_assault2100</div></div>
+      <div class="map-card"><img src="images/maps/cs_assault_csgo.jpg" alt="cs_assault_csgo"><div class="map-name">cs_assault_csgo</div></div>
+      <div class="map-card"><img src="images/maps/cs_assault_future.jpg" alt="cs_assault_future"><div class="map-name">cs_assault_future</div></div>
+      <div class="map-card"><img src="images/maps/cs_compound_csgo.jpg" alt="cs_compound_csgo"><div class="map-name">cs_compound_csgo</div></div>
+      <div class="map-card"><img src="images/maps/cs_insertion.jpg" alt="cs_insertion"><div class="map-name">cs_insertion</div></div>
+      <div class="map-card"><img src="images/maps/cs_outland.jpg" alt="cs_outland"><div class="map-name">cs_outland</div></div>
+      <div class="map-card"><img src="images/maps/cs_siege_csgo.jpg" alt="cs_siege_csgo"><div class="map-name">cs_siege_csgo</div></div>
+      <div class="map-card"><img src="images/maps/cs_suburban_extraction_day_fix.jpg" alt="cs_suburban_extraction_day_fix"><div class="map-name">cs_suburban_extraction_day_fix</div></div>
+      <div class="map-card"><img src="images/maps/de_aztec_csgo_v34.jpg" alt="de_aztec_csgo_v34"><div class="map-name">de_aztec_csgo_v34</div></div>
+      <div class="map-card"><img src="images/maps/de_cbble2.jpg" alt="de_cbble2"><div class="map-name">de_cbble2</div></div>
+      <div class="map-card"><img src="images/maps/de_dust2_cso2.jpg" alt="de_dust2_cso2"><div class="map-name">de_dust2_cso2</div></div>
+      <div class="map-card"><img src="images/maps/de_dust2_fo_final.jpg" alt="de_dust2_fo_final"><div class="map-name">de_dust2_fo_final</div></div>
+      <div class="map-card"><img src="images/maps/de_dust2_go_v34.jpg" alt="de_dust2_go_v34"><div class="map-name">de_dust2_go_v34</div></div>
+      <div class="map-card"><img src="images/maps/de_dust2_industry.jpg" alt="de_dust2_industry"><div class="map-name">de_dust2_industry</div></div>
+      <div class="map-card"><img src="images/maps/de_dust_go.jpg" alt="de_dust_go"><div class="map-name">de_dust_go</div></div>
+      <div class="map-card"><img src="images/maps/de_port_csgo.jpg" alt="de_port_csgo"><div class="map-name">de_port_csgo</div></div>
+      <div class="map-card"><img src="images/maps/de_sarab_remake.jpg" alt="de_sarab_remake"><div class="map-name">de_sarab_remake</div></div>
+      <div class="map-card"><img src="images/maps/de_stad.jpg" alt="de_stad"><div class="map-name">de_stad</div></div>
+      <div class="map-card"><img src="images/maps/de_storm_cso2.jpg" alt="de_storm_cso2"><div class="map-name">de_storm_cso2</div></div>
+      <div class="map-card"><img src="images/maps/fy_underground_vip.jpg" alt="fy_underground_vip"><div class="map-name">fy_underground_vip</div></div>
+    </div>
 
     <div class="rule"></div>
 
