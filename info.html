@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZOMBIE MATRIX | SERVER INFO</title>
+  <style>
+    :root {
+      --green: #7bff93;
+      --green-soft: #4ee070;
+      --ink: #070b08;
+      --panel: rgba(6, 16, 10, 0.66);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      color: #d4ffdd;
+      background: #000;
+      overflow-y: auto;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(48, 150, 85, 0.25), transparent 36%),
+        radial-gradient(circle at 80% 85%, rgba(40, 130, 80, 0.22), transparent 42%),
+        linear-gradient(180deg, rgba(0, 8, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('images/zombiehorde-matrix.webp');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 0;
+    }
+
+    .noise {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          180deg,
+          rgba(172, 255, 196, 0.04) 0px,
+          rgba(172, 255, 196, 0.04) 1px,
+          transparent 2px,
+          transparent 4px
+        );
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      animation: flicker 4.4s infinite linear;
+    }
+
+    .matrix-glyph::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(122, 255, 162, 0.22);
+      border-radius: inherit;
+      box-shadow: inset 0 0 16px rgba(95, 255, 148, 0.26);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      width: min(92vw, 820px);
+      padding: 24px 30px;
+      background: linear-gradient(160deg, rgba(8, 22, 14, 0.78), rgba(5, 12, 8, 0.74));
+      border: 1px solid rgba(102, 255, 157, 0.34);
+      border-left: 3px solid rgba(118, 255, 162, 0.7);
+      box-shadow: 0 8px 45px rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(1.5px);
+    }
+
+    h1 {
+      margin: 8px;
+      font-size: clamp(26px, 5.2vw, 52px);
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #baffc8;
+      text-shadow: 0 0 14px rgba(88, 255, 146, 0.44);
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: #8ef0ac;
+      font-size: clamp(12px, 2.2vw, 16px);
+      letter-spacing: 1.6px;
+    }
+
+    .rule {
+      margin: 18px 0 15px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(122, 255, 166, 0), rgba(122, 255, 166, 0.55), rgba(122, 255, 166, 0));
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.55;
+      font-size: clamp(12px, 2vw, 15px);
+      color: #d6ffe0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .footer {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #8acb9f;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid rgba(107, 255, 160, 0.45);
+      color: var(--green);
+      background: rgba(7, 15, 9, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 4px 0;
+    }
+
+    h2 {
+      margin: 0 0 6px 0;
+      font-size: clamp(13px, 2.2vw, 17px);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #7bff93;
+    }
+
+    p {
+      margin: 6px 0;
+      font-size: clamp(12px, 2vw, 14px);
+      color: #d6ffe0;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #7bff93;
+      font-weight: bold;
+    }
+
+    .label {
+      color: #8ef0ac;
+      font-weight: bold;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(11px, 1.9vw, 14px);
+      color: #d6ffe0;
+    }
+
+    .info-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid rgba(122, 255, 166, 0.1);
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      color: #8ef0ac;
+      font-weight: bold;
+      white-space: nowrap;
+      width: 42%;
+    }
+
+    .info-table td:last-child {
+      color: #d6ffe0;
+    }
+
+    .pw-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(11px, 1.9vw, 14px);
+      color: #d6ffe0;
+    }
+
+    .pw-table th {
+      text-align: left;
+      padding: 4px 8px;
+      color: #7bff93;
+      border-bottom: 1px solid rgba(122, 255, 166, 0.3);
+      font-size: clamp(10px, 1.8vw, 13px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .pw-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid rgba(122, 255, 166, 0.08);
+      vertical-align: top;
+    }
+
+    .pw-table td:first-child {
+      color: #8ef0ac;
+      font-weight: bold;
+      white-space: nowrap;
+      width: 30%;
+    }
+
+    .pw-table td:nth-child(2) {
+      color: #8ef0ac;
+      white-space: nowrap;
+      width: 22%;
+    }
+
+    .pw-table td:last-child {
+      color: #d6ffe0;
+    }
+
+    .pw-poison {
+      color: #ff6b6b !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="content">
+    <div class="sub">Welcome to the</div>
+    <h1>ZOMBIEHORDE MATRIX</h1>
+    <div class="sub" style="text-align: right;">Survive the Horde</div>
+    <div class="rule"></div>
+    <h2 style="text-align: center;">Server Information</h2>
+    <div class="rule"></div>
+
+    <div class="info-grid">
+
+      <!-- GAME MODE -->
+      <div>
+        <h2>Game Mode</h2>
+        <ul>
+          <li>Players play exclusively as <span class="highlight">CT</span> (Counter-Terrorists)</li>
+          <li>Enemies are <span class="highlight">Zombies</span> (Team T)</li>
+          <li>Only <span class="highlight">Headshots</span> deal permanent damage to Zombies</li>
+          <li>Zombies <span class="highlight">respawn once</span> at the same spot where they died &mdash; Watch out!</li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- ZOMBIE INFO -->
+      <div>
+        <h2>Zombie Info</h2>
+        <table class="info-table">
+          <tr><td>Number of Zombies</td><td>16</td></tr>
+          <tr><td>Difficulty</td><td>Expert</td></tr>
+          <tr><td>HP per Zombie</td><td>650</td></tr>
+          <tr><td>Respawn</td><td>1&times; at the death position</td></tr>
+          <tr><td>Respawn HP</td><td>325</td></tr>
+          <tr><td>Zombie Types</td><td>Zombie (red/white) &middot; Corpse (blue) &middot; Charple (thin/black) &middot; Ghost (transparent)</td></tr>
+        </table>
+        <p style="margin-top:8px;"><span class="highlight">Speeds:</span> Charple &rarr; fastest &nbsp;|&nbsp; Corpse / Ghost &rarr; normal &nbsp;|&nbsp; Zombie &rarr; slightly slower</p>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- COMBAT MECHANICS -->
+      <div>
+        <h2>Combat Mechanics</h2>
+        <ul>
+          <li><span class="label">HE Grenade:</span> Zombie burns for 5 sec. + slowed for 5 sec.</li>
+          <li><span class="label">Knife (Corpse Zombie):</span> Hard knife attack &rarr; Fire &amp; Slow effect on the CT-Player</li>
+          <li><span class="label">Damage Display:</span> Damage dealt is briefly shown after each hit</li>
+          <li><span class="label">Restricted Weapons:</span> G3SG1, SG550, SG552, Dual Elites, M249, Flashbang, Smoke, Defuser</li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- POWERUPS -->
+      <div>
+        <h2>Powerups</h2>
+        <p>Ghost Zombies drop <span class="highlight">powerups</span> every 30 seconds on the map. CT players who pick one up receive a <span class="highlight">random effect</span>:</p>
+        <table class="pw-table" style="margin-top:8px;">
+          <tr><th>Powerup</th><th>Duration</th><th>Effect</th></tr>
+          <tr><td>Speed</td><td>20 sec.</td><td>Movement speed +50%</td></tr>
+          <tr><td>Infinite Ammo</td><td>25 sec.</td><td>Unlimited ammunition</td></tr>
+          <tr><td>Low Gravity</td><td>15 sec.</td><td>Gravity reduced &ndash; jump higher</td></tr>
+          <tr><td>Health Regen</td><td>until max. HP</td><td>+10 HP per second</td></tr>
+          <tr><td>Kevlar + Helmet</td><td>instant</td><td>100 Armor instantly equipped</td></tr>
+          <tr class="pw-poison"><td>Poison</td><td>instant</td><td>Loses 50% of current HP &mdash; bad luck!</td></tr>
+          <tr><td>Teleport</td><td>instant</td><td>Teleported to a random zombie &mdash; Watch out!</td></tr>
+          <tr><td>Full Health</td><td>instant</td><td>HP fully restored</td></tr>
+          <tr><td>Full Ammo</td><td>instant</td><td>Clip &amp; reserve ammo of all weapons refilled</td></tr>
+          <tr><td>Quad Damage</td><td>30 sec.</td><td>Damage multiplier &times;4</td></tr>
+          <tr><td>Berserk</td><td>15 sec.</td><td>Knife only</td></tr>
+        </table>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- ROUND SETTINGS -->
+      <div>
+        <h2>Round Settings</h2>
+        <table class="info-table">
+          <tr><td>Map Time Limit</td><td>30 Minutes</td></tr>
+          <tr><td>Max. Rounds</td><td>25</td></tr>
+          <tr><td>Round Time</td><td>5 Minutes</td></tr>
+          <tr><td>Starting Money</td><td>$16,000</td></tr>
+          <tr><td>Buy Time</td><td>Total round time</td></tr>
+          <tr><td>Friendly Fire</td><td>disabled</td></tr>
+        </table>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- CHAT COMMANDS -->
+      <div>
+        <h2>Chat Commands</h2>
+        <table class="info-table">
+          <tr><td>!rpg</td><td>Opens the RPG menu</td></tr>
+          <tr><td>!rpgrank</td><td>Shows your RPG rank</td></tr>
+          <tr><td>!rank</td><td>Shows your rank, kills, deaths and KDR</td></tr>
+          <tr><td>!top</td><td>Leaderboard of all players by kills</td></tr>
+          <tr><td>!sounds</td><td>Opens the Zombie-Matrix sound menu</td></tr>
+          <tr><td>!skins</td><td>Choose your CT skin</td></tr>
+          <tr><td>!nextmap</td><td>Shows the next map</td></tr>
+          <tr><td>!rtv</td><td>Rock The Vote &ndash; vote for a map change</td></tr>
+          <tr><td>!motd</td><td>Shows the welcome message</td></tr>
+          <tr><td>timeleft</td><td>Shows remaining time on the current map</td></tr>
+          <tr><td>!thetime</td><td>Shows your local and the server time</td></tr>
+          <tr><td>!maps</td><td>Shows the maps running on the server</td></tr>
+        </table>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- MISCELLANEOUS -->
+      <div>
+        <h2>Miscellaneous</h2>
+        <table class="info-table">
+          <tr><td>FastDL</td><td>active (fast downloads)</td></tr>
+          <tr><td>Sprays</td><td>allowed</td></tr>
+          <tr><td>Spectator Mode</td><td>available</td></tr>
+          <tr><td>Voice Chat</td><td>active (team chat only)</td></tr>
+          <tr><td>Tickrate</td><td>66</td></tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="footer">
+      <a href="about-zhmatrix.html" style="text-decoration:none;"><span class="tag">About zombiehorde matrix</span></a>
+      <a href="about-zhplugin.html" style="text-decoration:none;"><span class="tag">About zombiehorde.com aka zhplugin</span></a>
+    </div>
+  </div>
+</body>
+</html>
