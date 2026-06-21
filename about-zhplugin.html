@@ -4,170 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZOMBIEHORDE MATRIX | About zhplugin</title>
-  <style>
-    :root {
-      --green: #7bff93;
-      --green-soft: #4ee070;
-      --ink: #070b08;
-      --panel: rgba(6, 16, 10, 0.66);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      height: 100%;
-    }
-
-    body {
-      width: 100%;
-      min-height: 100%;
-      margin: 0;
-      font-family: Tahoma, Verdana, Arial, sans-serif;
-      color: #d4ffdd;
-      background: #000;
-      overflow-y: scroll;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background-image:
-        radial-gradient(circle at 20% 10%, rgba(48, 150, 85, 0.25), transparent 36%),
-        radial-gradient(circle at 80% 85%, rgba(40, 130, 80, 0.22), transparent 42%),
-        linear-gradient(180deg, rgba(0, 8, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%),
-        url('images/zombiehorde-matrix.webp');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-
-    body {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 100px 0;
-    }
-
-    .noise {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        repeating-linear-gradient(
-          180deg,
-          rgba(172, 255, 196, 0.04) 0px,
-          rgba(172, 255, 196, 0.04) 1px,
-          transparent 2px,
-          transparent 4px
-        );
-      opacity: 0.35;
-      mix-blend-mode: screen;
-      animation: flicker 4.4s infinite linear;
-    }
-
-    .matrix-glyph::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(122, 255, 162, 0.22);
-      border-radius: inherit;
-      box-shadow: inset 0 0 16px rgba(95, 255, 148, 0.26);
-      pointer-events: none;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-      width: min(92vw, 820px);
-      padding: 24px 30px;
-      background: linear-gradient(160deg, rgba(8, 22, 14, 0.78), rgba(5, 12, 8, 0.74));
-      border: 1px solid rgba(102, 255, 157, 0.34);
-      border-left: 3px solid rgba(118, 255, 162, 0.7);
-      box-shadow: 0 8px 45px rgba(0, 0, 0, 0.62);
-      backdrop-filter: blur(1.5px);
-    }
-
-    h1 {
-      margin: 8px;
-      font-size: clamp(26px, 5.2vw, 52px);
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      text-align: center;
-      color: #baffc8;
-      text-shadow: 0 0 14px rgba(88, 255, 146, 0.44);
-    }
-
-    h2 {
-      margin: 0 0 6px 0;
-      font-size: clamp(13px, 2.2vw, 17px);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #7bff93;
-    }
-
-    .sub {
-      margin-top: 8px;
-      color: #8ef0ac;
-      font-size: clamp(12px, 2.2vw, 16px);
-      letter-spacing: 1.6px;
-    }
-
-    .rule {
-      margin: 18px 0 15px;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(122, 255, 166, 0), rgba(122, 255, 166, 0.55), rgba(122, 255, 166, 0));
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 20px;
-      line-height: 1.55;
-      font-size: clamp(12px, 2vw, 15px);
-      color: #d6ffe0;
-    }
-
-    li {
-      margin: 4px 0;
-    }
-
-    p {
-      margin: 6px 0;
-      font-size: clamp(12px, 2vw, 14px);
-      color: #d6ffe0;
-      line-height: 1.6;
-    }
-
-    .footer {
-      margin-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: #8acb9f;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      border: 1px solid rgba(107, 255, 160, 0.45);
-      color: var(--green);
-      background: rgba(7, 15, 9, 0.45);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body class="page-scroll">
   <div class="noise"></div>
 
   <div class="content">
+    <nav class="burger-nav">
+      <input type="checkbox" id="burgerToggle">
+      <label for="burgerToggle" class="burger-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <div class="burger-menu">
+        <a href="motd.html">MOTD</a>
+        <div class="menu-divider"></div>
+        <a href="info.html">Info</a>
+        <a href="maps.html">Maps</a>
+        <div class="menu-divider"></div>
+        <a href="about-zhmatrix.html">About ZH Matrix</a>
+        <a href="about-zhplugin.html" class="active">About ZH Plugin</a>
+      </div>
+    </nav>
     <div class="sub">About</div>
     <h1>zombiehorde.com</h1>
     <h1>zhplugin</h1>
@@ -179,7 +36,7 @@
       Zombie Horde is a server plugin for Counter-Strike: Source that turns a standard
       CS:S server into a cooperative survival shooter. A team of humans must work together
       to survive a horde of zombies &mdash; only headshots count.
-      Developed 2005&ndash;2007 by <strong style="color:#7bff93;">.robot &amp; electronaut</strong>
+      Developed 2005&ndash;2007 by <strong style="color:#7bff93;">.robot &amp; electronaut</strong> and the whole zhplugin team
       (Australian open-source project).
     </p>
 
@@ -218,12 +75,5 @@
       <span>&copy; 2005&ndash;2007 .robot &amp; electronaut and the whole zhplugin team</span>
       <span>Open Source &mdash; zombiehorde.com</span>
     </div>
-
-    <div class="rule"></div>
-
-    <div class="footer">
-      <a href="motd.html" style="text-decoration:none;"><span class="tag">Home</span></a>
-      <a href="about-zhmatrix.html" style="text-decoration:none;"><span class="tag">About zombiehorde matrix</span></a>
-  </div>
 </body>
 </html>
