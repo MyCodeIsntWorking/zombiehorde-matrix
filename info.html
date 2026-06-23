@@ -5,13 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZOMBIEHORDE MATRIX | SERVER INFO</title>
   <style>
-    :root {
-      --green: #7bff93;
-      --green-soft: #4ee070;
-      --ink: #070b08;
-      --panel: rgba(6, 16, 10, 0.66);
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -143,7 +136,7 @@
     .tag {
       padding: 6px 10px;
       border: 1px solid rgba(107, 255, 160, 0.45);
-      color: var(--green);
+      color: #7bff93;
       background: rgba(7, 15, 9, 0.45);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -336,17 +329,17 @@
         <p>Ghost Zombies drop <span class="highlight">powerups</span> every 30 seconds on the map. CT players who pick one up receive a <span class="highlight">random effect</span>:</p>
         <table class="pw-table" style="margin-top:8px;">
           <tr><th>Powerup</th><th>Duration</th><th>Effect</th></tr>
-          <tr><td>Speed</td><td>20 sec.</td><td>Movement speed +50%</td></tr>
-          <tr><td>Infinite Ammo</td><td>25 sec.</td><td>Unlimited ammunition</td></tr>
-          <tr><td>Low Gravity</td><td>15 sec.</td><td>Gravity reduced &ndash; jump higher</td></tr>
-          <tr><td>Health Regen</td><td>until max. HP</td><td>+10 HP per second</td></tr>
-          <tr><td>Kevlar + Helmet</td><td>instant</td><td>100 Armor instantly equipped</td></tr>
-          <tr class="pw-poison"><td>Poison</td><td>instant</td><td>Loses 50% of current HP &mdash; bad luck!</td></tr>
-          <tr><td>Teleport</td><td>instant</td><td>Teleported to a random zombie &mdash; Watch out!</td></tr>
-          <tr><td>Full Health</td><td>instant</td><td>HP fully restored</td></tr>
-          <tr><td>Full Ammo</td><td>instant</td><td>Clip &amp; reserve ammo of all weapons refilled</td></tr>
-          <tr><td>Quad Damage</td><td>30 sec.</td><td>Damage multiplier &times;4</td></tr>
           <tr><td>Berserk</td><td>15 sec.</td><td>Knife only</td></tr>
+          <tr><td>Full Ammo</td><td>instant</td><td>Clip &amp; reserve ammo of all weapons refilled</td></tr>
+          <tr><td>Full Health</td><td>instant</td><td>HP fully restored</td></tr>
+          <tr><td>Health Regen</td><td>until max. HP</td><td>+10 HP per second</td></tr>
+          <tr><td>Infinite Ammo</td><td>25 sec.</td><td>Unlimited ammunition</td></tr>
+          <tr><td>Kevlar + Helmet</td><td>instant</td><td>100 Armor instantly equipped</td></tr>
+          <tr><td>Low Gravity</td><td>15 sec.</td><td>Gravity reduced &ndash; jump higher</td></tr>
+          <tr class="pw-poison"><td>Poison</td><td>instant</td><td>Loses 50% of current HP &mdash; bad luck!</td></tr>
+          <tr><td>Quad Damage</td><td>30 sec.</td><td>Damage multiplier &times;4</td></tr>
+          <tr><td>Speed</td><td>20 sec.</td><td>Movement speed +50%</td></tr>
+          <tr><td>Teleport</td><td>instant</td><td>Teleported to a random zombie &mdash; Watch out!</td></tr>
         </table>
       </div>
 
@@ -371,18 +364,21 @@
       <div>
         <h2>Chat Commands</h2>
         <table class="info-table">
+          <tr><td>!cc</td><td>Opens the Chat Command Menu</td></tr>
+          <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
           <tr><td>!rpg</td><td>Opens the RPG menu</td></tr>
           <tr><td>!rpgrank</td><td>Shows your RPG rank</td></tr>
           <tr><td>!rank</td><td>Shows your rank, kills, deaths and KDR</td></tr>
           <tr><td>!top</td><td>Leaderboard of all players by kills</td></tr>
           <tr><td>!sounds</td><td>Opens the Zombie-Matrix sound menu</td></tr>
           <tr><td>!skins</td><td>Choose your CT skin</td></tr>
-          <tr><td>!nextmap</td><td>Shows the next map</td></tr>
-          <tr><td>!rtv</td><td>Rock The Vote &ndash; vote for a map change</td></tr>
-          <tr><td>!motd</td><td>Shows the welcome message</td></tr>
           <tr><td>timeleft</td><td>Shows remaining time on the current map</td></tr>
+          <tr><td>!rtv</td><td>Rock The Vote &ndash; vote for a map change</td></tr>
+          <tr><td>!nextmap</td><td>Shows the next map</td></tr>
           <tr><td>!thetime</td><td>Shows your local and the server time</td></tr>
+          <tr><td>!info</td><td>Shows the welcome message</td></tr>
           <tr><td>!maps</td><td>Shows the maps running on the server</td></tr>
+          <tr><td>!motd</td><td>Shows the message of the day</td></tr>
         </table>
       </div>
 

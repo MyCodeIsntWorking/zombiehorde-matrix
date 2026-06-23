@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZOMBIEHORDE MATRIX | MOTD</title>
   <style>
-    :root {
-      --green: #7bff93;
-      --green-soft: #4ee070;
-      --ink: #070b08;
-      --panel: rgba(6, 16, 10, 0.66);
-    }
-
     * {
       box-sizing: border-box;
     }
 
     html {
       height: 100%;
+      scroll-behavior: smooth;
     }
 
     body {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px 0;
       width: 100%;
       min-height: 100%;
       margin: 0;
@@ -43,13 +42,6 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-    }
-
-    body {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .noise {
@@ -141,7 +133,7 @@
     .tag {
       padding: 6px 10px;
       border: 1px solid rgba(107, 255, 160, 0.45);
-      color: var(--green);
+      color: #7bff93;
       background: rgba(7, 15, 9, 0.45);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -192,30 +184,28 @@
       <li>Zombies are fast and tough — teamwork is a must.</li>
       <li>Headshots are crucial — use Focus Fire.</li>
       <li>Respect & Fairplay: no griefing, no harassment, no intentional team blocking.</li>
+      <br />
       <li>[G]ood [L]uck & [H]ave [F]un</li>
     <div class="rule"></div>
-    <div class="sub">Chat commands:</div>
+    <div class="sub">Chat commands Menu:</div>
     <table style="width: 100%; border-collapse: collapse;">
       <tr style="height: 50px;">
         <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>!rpg</strong> ➔ to open the RPG menu.</li>
-          <li><strong>!rpgrank</strong> ➔ to see your RPG rank.</li>
-          <li><strong>!rank</strong> ➔ to see your rank</li>
-          <li><strong>!top</strong> ➔ to see the Top 10 players.</li>
-          <li><strong>!sounds</strong> ➔ to open the sounds menu.</li>
-          <li><strong>!skins</strong> ➔ to select your CT skin.</li>
-        </td>
-        <td style="width: 50%; border: 1px solid #000;">
-          <li><strong>!nextmap</strong> ➔ to see the next map.</li>
-          <li><strong>!rtv</strong> ➔ to vote for the next map.</li>
-          <li><strong>!motd</strong> ➔ to open the message of the day.</li>
-          <li><strong>timeleft</strong> ➔ to see the time left for the current map.</li>
-          <li><strong>!thetime</strong> ➔ to see your local and server time.</li>
-          <li><strong>!maps</strong> ➔ to see the maps running on the server.</li>
+          <li><strong>!cc</strong> ➔ to open the Chat Command Menu.</li>
         </td>
       </tr>
     </table>
     </ul>
   </div>
 </body>
+<script>
+  window.onload = function () {
+    var content = document.querySelector('.content');
+    var viewH   = window.innerHeight;
+    var contH   = content.offsetHeight;
+    var pad     = Math.max(20, Math.floor((viewH - contH) / 2));
+    document.body.style.paddingTop    = pad + 'px';
+    document.body.style.paddingBottom = pad + 'px';
+  };
+</script>
 </html>
