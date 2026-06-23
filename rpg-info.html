@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZOMBIEHORDE MATRIX | About zhplugin</title>
+  <title>ZOMBIEHORDE MATRIX | MOTD</title>
   <style>
     * {
       box-sizing: border-box;
@@ -15,6 +15,11 @@
     }
 
     body {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px 0;
       width: 100%;
       min-height: 100%;
       margin: 0;
@@ -39,17 +44,10 @@
       background-repeat: no-repeat;
     }
 
-    body {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 100px 0;
-    }
-
     .noise {
       position: absolute;
       inset: 0;
+      z-index: 1;
       pointer-events: none;
       background:
         repeating-linear-gradient(
@@ -96,14 +94,6 @@
       text-shadow: 0 0 14px rgba(88, 255, 146, 0.44);
     }
 
-    h2 {
-      margin: 0 0 6px 0;
-      font-size: clamp(13px, 2.2vw, 17px);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #7bff93;
-    }
-
     .sub {
       margin-top: 8px;
       color: #8ef0ac;
@@ -129,13 +119,6 @@
       margin: 4px 0;
     }
 
-    p {
-      margin: 6px 0;
-      font-size: clamp(12px, 2vw, 14px);
-      color: #d6ffe0;
-      line-height: 1.6;
-    }
-
     .footer {
       margin-top: 18px;
       display: flex;
@@ -157,6 +140,62 @@
       font-weight: bold;
     }
 
+    p {
+      margin: 6px 0;
+      font-size: clamp(12px, 2vw, 14px);
+      color: #d6ffe0;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #7bff93;
+      font-weight: bold;
+    }
+
+    .pw-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(11px, 1.9vw, 14px);
+      color: #d6ffe0;
+    }
+
+    .pw-table th {
+      text-align: left;
+      padding: 4px 8px;
+      color: #7bff93;
+      border-bottom: 1px solid rgba(122, 255, 166, 0.3);
+      font-size: clamp(10px, 1.8vw, 13px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .pw-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid rgba(122, 255, 166, 0.08);
+      vertical-align: top;
+    }
+
+    .pw-table td:first-child {
+      color: #8ef0ac;
+      font-weight: bold;
+      white-space: nowrap;
+      width: 30%;
+    }
+
+    .pw-table td:nth-child(2) {
+      color: #8ef0ac;
+      white-space: nowrap;
+      width: 22%;
+    }
+
+    .pw-table td:last-child {
+      color: #d6ffe0;
+    }
+
+    .pw-poison {
+      color: #ff6b6b !important;
+    }
+
     /* ── Burger Menu ── */
     .burger-nav { position: absolute; top: -40px; left: -3px; z-index: 1000; padding: 6px 10px; background: linear-gradient(160deg, rgba(8, 22, 14, 0.78), rgba(5, 12, 8, 0.74)); border: 1px solid rgba(102, 255, 157, 0.34); border-left: 3px solid rgba(118, 255, 162, 0.7); box-shadow: 0 8px 45px rgba(0, 0, 0, 0.62); backdrop-filter: blur(1.5px); }
     #burgerToggle { display: none; }
@@ -171,11 +210,9 @@
     .burger-menu a:hover { background: rgba(123,255,147,0.1); color: #7bff93; border-left-color: #7bff93; }
     .burger-menu a.active { color: #7bff93; border-left-color: #7bff93; background: rgba(123,255,147,0.07); }
     .burger-menu .menu-divider { height: 1px; background: rgba(123,255,147,0.2); margin: 6px 12px; }
-    .scroll-top { display: block; margin-top: 20px; text-align: right; color: #7bff93; text-decoration: none; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s; }
-    .scroll-top:hover { opacity: 1; text-shadow: 0 0 8px rgba(123,255,147,0.6); }
   </style>
 </head>
-<body id="top">
+<body>
   <div class="noise"></div>
 
   <div class="content">
@@ -185,69 +222,57 @@
         <span></span><span></span><span></span>
       </label>
       <div class="burger-menu">
-        <a href="motd.html">MOTD</a>
+        <a href="motd.html" class="active">MOTD</a>
         <div class="menu-divider"></div>
         <a href="info.html">Info</a>
         <div class="menu-divider"></div>
         <a href="powerups.html">Powerups</a>
-        <a href="rpg-info.html">RPG System</a>
+        <a href="rpg-info.html" class="active">RPG System</a>
         <a href="maps.html">Maps</a>
         <div class="menu-divider"></div>
         <a href="about-zhmatrix.html">About ZH Matrix</a>
-        <a href="about-zhplugin.html" class="active">About ZH Plugin</a>
+        <a href="about-zhplugin.html">About ZH Plugin</a>
       </div>
     </nav>
-    <div class="sub">About</div>
-    <h1>zombiehorde.com</h1>
-    <h1>zhplugin</h1>
-    <div class="sub" style="text-align: right;">Version 1.1</div>
+    <div class="sub">Welcome to the</div>
+    <h1>ZOMBIEHORDE MATRIX</h1>
+    <div class="sub" style="text-align: right;">Survive the Horde</div>
+    <div class="rule"></div>
+    <h2 style="text-align: center;">RPG Info</h2>
     <div class="rule"></div>
 
-    <h2>What is Zombie Horde?</h2>
-    <p>
-      Zombie Horde is a server plugin for Counter-Strike: Source that turns a standard
-      CS:S server into a cooperative survival shooter. A team of humans must work together
-      to survive a horde of zombies &mdash; only headshots count.
-      Developed 2005&ndash;2007 by <strong style="color:#7bff93;">.robot &amp; electronaut</strong> and the whole zhplugin team
-      (Australian open-source project).
-    </p>
+      <!-- RPG SYSTEM -->
+      <div>
+        <br />
+        <p>Use <span class="highlight">!rpg</span> to open the upgrade menu.</p>
+        <p>Kills earn <span class="highlight">Experience Points (XP)</span> &mdash; as your level increases you receive <span class="highlight">Credits</span> that can be spent on upgrades.</p>
+        <br />
+        <table class="pw-table" style="margin-top:8px;">
+          <tr><th>Upgrade</th><th>Effect</th></tr>
+          <tr><td>Bouncy Bullets</td><td>Knocks back hit enemies</td></tr>
+          <tr><td>Clipsize+</td><td>Increases magazine size of all weapons</td></tr>
+          <tr><td>Denial</td><td>Prevents enemies from respawning</td></tr>
+          <tr><td>Frost Pistol</td><td>Slows down hit enemies</td></tr>
+          <tr><td>Grenade Resupply</td><td>HE grenades are automatically restocked after throwing</td></tr>
+          <tr><td>Health+</td><td>Bonus HP at the start of each round</td></tr>
+          <tr><td>Long Jump</td><td>Increases jump distance</td></tr>
+          <tr><td>Medic</td><td>Heals nearby teammates</td></tr>
+          <tr><td>Resupply</td><td>Automatically restores ammo over time</td></tr>
+          <tr><td>Speed+</td><td>Increases movement speed</td></tr>
+          <tr><td>Stealth</td><td>Makes the player less visible</td></tr>
+        </table>
+      </div>
 
-    <div class="rule"></div>
-
-    <h2>Gameplay</h2>
-    <ul>
-      <li>32-player server recommended &mdash; 18 bots play as zombies</li>
-      <li>Zombies receive a health boost and self-healing on spawn</li>
-      <li>Only direct headshots permanently kill a zombie</li>
-      <li>Various zombie classes with different abilities</li>
-      <li>Zombies drop green eggs &mdash; powerups for humans (watch out: poison!)</li>
-    </ul>
-
-    <div class="rule"></div>
-
-    <h2>Powerups (13 Types)</h2>
-    <ul>
-      <li>Berserk &bull; Speed &bull; Infinite Ammo &bull; Low Gravity &bull; Slow Motion</li>
-      <li>Health Regen &bull; Assault Suit &bull; Teleport &bull; Full Health &bull; Full Ammo</li>
-      <li>Quad Damage &bull; Zombification &bull; Ratsack <em>(poison!)</em></li>
-    </ul>
-
-    <div class="rule"></div>
-
-    <h2>Admin Commands (Selection)</h2>
-    <ul>
-      <li><strong>zh_ac</strong> &mdash; open anti-camp menu</li>
-      <li><strong>zh_restrict / zh_unrestrict</strong> &mdash; restrict / unrestrict weapons</li>
-      <li><strong>zh_resetrank / zh_resetallranks</strong> &mdash; reset player rank(s)</li>
-      <li><strong>zh_powerup</strong> &mdash; manually spawn a powerup</li>
-      <li><strong>zh_incslot / zh_decslot</strong> &mdash; adjust zombie slot count</li>
-    </ul>
-
-    <div class="footer">
-      <span>&copy; 2005&ndash;2007 .robot &amp; electronaut and the whole zhplugin team</span>
-      <span>Open Source &mdash; zombiehorde.com</span>
-    </div>
-    <a href="#top" class="scroll-top">↑ Scroll to Top</a>
   </div>
 </body>
+<script>
+  window.onload = function () {
+    var content = document.querySelector('.content');
+    var viewH   = window.innerHeight;
+    var contH   = content.offsetHeight;
+    var pad     = Math.max(20, Math.floor((viewH - contH) / 2));
+    document.body.style.paddingTop    = pad + 'px';
+    document.body.style.paddingBottom = pad + 'px';
+  };
+</script>
 </html>

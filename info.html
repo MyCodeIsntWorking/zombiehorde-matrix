@@ -266,8 +266,10 @@
         <a href="motd.html">MOTD</a>
         <div class="menu-divider"></div>
         <a href="info.html" class="active">Info</a>
-        <a href="maps.html">Maps</a>
+        <div class="menu-divider"></div>
         <a href="powerups.html">Powerups</a>
+        <a href="rpg-info.html">RPG System</a>
+        <a href="maps.html">Maps</a>
         <div class="menu-divider"></div>
         <a href="about-zhmatrix.html">About ZH Matrix</a>
         <a href="about-zhplugin.html">About ZH Plugin</a>
@@ -295,6 +297,21 @@
 
       <div class="rule"></div>
 
+      <!-- COMBAT MECHANICS -->
+      <div>
+        <h2>Combat Mechanics</h2>
+        <ul>
+          <li><span class="label">Powerups:</span> Ghost Zombies drop random powerups every 30 sec. &mdash; pick them up for time-limited effects.</li>
+          <li><span class="label">RPG System:</span> Kills earn XP and Credits &mdash; spend them on permanent upgrades via <span class="highlight">!rpg</span>.</li>
+          <li><span class="label">HE Grenade:</span> Zombie burns for 5 sec. + slowed for 5 sec.</li>
+          <li><span class="label">Knife (Corpse Zombie):</span> Hard knife attack &rarr; Fire &amp; Slow effect on the CT-Player</li>
+          <li><span class="label">Restricted Weapons:</span> G3SG1, SG550, SG552, Dual Elites, M249, Flashbang, Smoke, Defuser</li>
+          <li><span class="label">Damage Display:</span> Damage dealt is briefly shown after each hit</li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+
       <!-- ZOMBIE INFO -->
       <div>
         <h2>Zombie Info</h2>
@@ -307,19 +324,6 @@
           <tr><td>Zombie Types</td><td>Zombie (red/white) &middot; Corpse (blue) &middot; Charple (thin/black) &middot; Ghost (transparent)</td></tr>
         </table>
         <p style="margin-top:8px;"><span class="highlight">Speeds:</span> Charple &rarr; fastest &nbsp;|&nbsp; Corpse / Ghost &rarr; normal &nbsp;|&nbsp; Zombie &rarr; slightly slower</p>
-      </div>
-
-      <div class="rule"></div>
-
-      <!-- COMBAT MECHANICS -->
-      <div>
-        <h2>Combat Mechanics</h2>
-        <ul>
-          <li><span class="label">HE Grenade:</span> Zombie burns for 5 sec. + slowed for 5 sec.</li>
-          <li><span class="label">Knife (Corpse Zombie):</span> Hard knife attack &rarr; Fire &amp; Slow effect on the CT-Player</li>
-          <li><span class="label">Damage Display:</span> Damage dealt is briefly shown after each hit</li>
-          <li><span class="label">Restricted Weapons:</span> G3SG1, SG550, SG552, Dual Elites, M249, Flashbang, Smoke, Defuser</li>
-        </ul>
       </div>
 
       <div class="rule"></div>
@@ -341,6 +345,29 @@
           <tr><td>Quad Damage</td><td>30 sec.</td><td>Damage multiplier &times;4</td></tr>
           <tr><td>Speed</td><td>20 sec.</td><td>Movement speed +50%</td></tr>
           <tr><td>Teleport</td><td>instant</td><td>Teleported to a random zombie &mdash; Watch out!</td></tr>
+        </table>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- RPG SYSTEM -->
+      <div>
+        <h2>RPG System</h2>
+        <p>Use <span class="highlight">!rpg</span> to open the upgrade menu.</p>
+        <p>Kills earn <span class="highlight">Experience Points (XP)</span> &mdash; as your level increases you receive <span class="highlight">Credits</span> that can be spent on upgrades.</p>
+        <table class="pw-table" style="margin-top:8px;">
+          <tr><th>Upgrade</th><th>Effect</th></tr>
+          <tr><td>Bouncy Bullets</td><td>Knocks back hit enemies</td></tr>
+          <tr><td>Clipsize+</td><td>Increases magazine size of all weapons</td></tr>
+          <tr><td>Denial</td><td>Prevents enemies from respawning</td></tr>
+          <tr><td>Frost Pistol</td><td>Slows down hit enemies</td></tr>
+          <tr><td>Grenade Resupply</td><td>HE grenades are automatically restocked after throwing</td></tr>
+          <tr><td>Health+</td><td>Bonus HP at the start of each round</td></tr>
+          <tr><td>Long Jump</td><td>Increases jump distance</td></tr>
+          <tr><td>Medic</td><td>Heals nearby teammates</td></tr>
+          <tr><td>Resupply</td><td>Automatically restores ammo over time</td></tr>
+          <tr><td>Speed+</td><td>Increases movement speed</td></tr>
+          <tr><td>Stealth</td><td>Makes the player less visible</td></tr>
         </table>
       </div>
 
@@ -389,11 +416,10 @@
       <div>
         <h2>Miscellaneous</h2>
         <table class="info-table">
+          <tr><td>Tickrate</td><td>100</td></tr>
           <tr><td>FastDL</td><td>active (fast downloads)</td></tr>
-          <tr><td>Sprays</td><td>allowed</td></tr>
-          <tr><td>Spectator Mode</td><td>available</td></tr>
           <tr><td>Voice Chat</td><td>active (team chat only)</td></tr>
-          <tr><td>Tickrate</td><td>66</td></tr>
+          <tr><td>Spectator Mode</td><td>available</td></tr>
         </table>
       </div>
 
