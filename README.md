@@ -6,4 +6,4 @@
 - Closed/Privat
 
 # Server:
-- 134.255.233.32:27210 - ZOMBIEHORDE MATRIX
+- 134.255.233.32:27210 - ZOMBIEHORDE MATRIX | Reborn | FastDL | Low-Ping |
