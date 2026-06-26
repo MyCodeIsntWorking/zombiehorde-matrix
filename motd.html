@@ -140,44 +140,12 @@
       font-weight: bold;
     }
 
-    /* ── Burger Menu ── */
-    .burger-nav { position: absolute; top: -40px; left: -3px; z-index: 1000; padding: 6px 10px; background: linear-gradient(160deg, rgba(8, 22, 14, 0.78), rgba(5, 12, 8, 0.74)); border: 1px solid rgba(102, 255, 157, 0.34); border-left: 3px solid rgba(118, 255, 162, 0.7); box-shadow: 0 8px 45px rgba(0, 0, 0, 0.62); backdrop-filter: blur(1.5px); }
-    #burgerToggle { display: none; }
-    .burger-label { display: flex; flex-direction: column; justify-content: space-between; width: 36px; height: 26px; cursor: pointer; }
-    .burger-label span { display: block; height: 3px; background: #7bff93; border-radius: 2px; transition: all 0.3s ease; box-shadow: 0 0 6px rgba(123,255,147,0.5); }
-    #burgerToggle:checked ~ .burger-label span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-    #burgerToggle:checked ~ .burger-label span:nth-child(2) { opacity: 0; }
-    #burgerToggle:checked ~ .burger-label span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
-    .burger-menu { position: absolute; top: 38px; left: -3px; background: rgba(5, 15, 8, 0.98); border: 1px solid rgba(123,255,147,0.35); border-left: 3px solid rgba(118,255,162,0.7); min-width: 220px; display: none; flex-direction: column; padding: 8px 0; box-shadow: 0 8px 32px rgba(0,0,0,0.7); backdrop-filter: blur(4px); }
-    #burgerToggle:checked ~ .burger-menu { display: flex; }
-    .burger-menu a { padding: 10px 18px; color: #b0ffc8; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: Tahoma, Verdana, Arial, sans-serif; transition: background 0.2s, color 0.2s; border-left: 2px solid transparent; }
-    .burger-menu a:hover { background: rgba(123,255,147,0.1); color: #7bff93; border-left-color: #7bff93; }
-    .burger-menu a.active { color: #7bff93; border-left-color: #7bff93; background: rgba(123,255,147,0.07); }
-    .burger-menu .menu-divider { height: 1px; background: rgba(123,255,147,0.2); margin: 6px 12px; }
   </style>
 </head>
 <body>
   <div class="noise"></div>
 
   <div class="content">
-    <nav class="burger-nav">
-      <input type="checkbox" id="burgerToggle">
-      <label for="burgerToggle" class="burger-label" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </label>
-      <div class="burger-menu">
-        <a href="motd.html" class="active">MOTD</a>
-        <div class="menu-divider"></div>
-        <a href="info.html">Info</a>
-        <div class="menu-divider"></div>
-        <a href="powerups.html">Powerups</a>
-        <a href="rpg-info.html">RPG System</a>
-        <a href="maps.html">Maps</a>
-        <div class="menu-divider"></div>
-        <a href="about-zhmatrix.html">About ZH Matrix</a>
-        <a href="about-zhplugin.html">About ZH Plugin</a>
-      </div>
-    </nav>
     <div class="sub">Welcome to the</div>
     <h1>ZOMBIEHORDE MATRIX</h1>
     <div class="sub" style="text-align: right;">Survive the Horde</div>
